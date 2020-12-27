@@ -17,5 +17,8 @@ data class EthBlock(
     val difficulty: String,
     val totalDifficulty: String,
     var timestamp: String,
+    var size: String,
+    var gasUsed: String,
+    var gasLimit: String,
     val transactions: List<EthTransaction>,
 )

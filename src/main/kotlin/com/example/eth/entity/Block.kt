@@ -17,6 +17,10 @@ class Block(
     var difficulty: Long,
     var totalDifficulty: Long,
 
+    var size: Int,
+    var gasUsed: Long? = null,
+    var gasLimit: Long? = null,
+
     var transactionsCount: Int? = null,
     var timestamp: Int? = null,
 

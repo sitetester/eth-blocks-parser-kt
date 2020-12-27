@@ -25,6 +25,9 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
             difficulty = hexToLong(ethBlock.difficulty),
             totalDifficulty = hexToLong(ethBlock.totalDifficulty),
             timestamp = hexToInt(ethBlock.timestamp),
+            size = hexToInt(ethBlock.size),
+            gasUsed = hexToLong(ethBlock.gasUsed),
+            gasLimit = hexToLong(ethBlock.gasLimit),
             transactionsCount = transactions.count()
         )
 

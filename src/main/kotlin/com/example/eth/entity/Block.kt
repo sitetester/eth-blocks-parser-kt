@@ -13,6 +13,10 @@ class Block(
 
     var number: Long,
     var hash: String? = null,
+
+    var difficulty: Long,
+    var totalDifficulty: Long,
+
     var transactionsCount: Int? = null,
     var timestamp: Int? = null,
 

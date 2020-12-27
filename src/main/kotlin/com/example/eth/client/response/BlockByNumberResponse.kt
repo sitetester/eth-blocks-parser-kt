@@ -15,6 +15,7 @@ data class EthBlock(
     val number: String,
     val hash: String,
     val difficulty: String,
+    val totalDifficulty: String,
     var timestamp: String,
     val transactions: List<EthTransaction>,
 )

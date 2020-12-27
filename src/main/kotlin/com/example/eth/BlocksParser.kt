@@ -26,6 +26,7 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
 
         return Block(
             number = blockNumber,
+            timestamp = hexToInt(ethBlock.timestamp),
             transactionsCount = transactions.count(),
             transactions = getTransactions(ethBlock.transactions, statuses)
         )
@@ -86,6 +87,12 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
                 status = status
             )
         }
+    }
+
+    // https://stackoverflow.com/questions/6611824/why-do-we-need-to-use-radix-parameter-when-calling-parseint
+    private fun hexToInt(value: String): Int {
+
+        return value.replace("0x", "").toInt(16)
     }
 
     private fun hexToLong(value: String): Long {

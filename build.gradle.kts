@@ -21,7 +21,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
-    implementation("org.springframework.shell:spring-shell-starter:2.0.1.RELEASE")
+    // implementation("org.springframework.shell:spring-shell-starter:2.0.1.RELEASE")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.boot:spring-boot-starter-web")
 

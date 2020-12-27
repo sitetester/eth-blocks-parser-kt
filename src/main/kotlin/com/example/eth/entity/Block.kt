@@ -13,6 +13,7 @@ class Block(
 
     var number: Long,
     var transactionsCount: Int? = null,
+    var timestamp: Int? = null,
 
     // `cascade` option must be set in order to save this relationship data successfully
     @OneToMany(cascade = [CascadeType.PERSIST], mappedBy = "block", fetch = FetchType.LAZY)

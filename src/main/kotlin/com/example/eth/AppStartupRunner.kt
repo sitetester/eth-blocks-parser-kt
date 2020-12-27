@@ -1,9 +1,12 @@
 package com.example.eth
 
-// @Component
+import org.springframework.stereotype.Component
+import javax.annotation.PostConstruct
+
+@Component
 class AppStartupRunner(private val importManager: ImportManager) {
 
-    // @PostConstruct
+    @PostConstruct
     fun init() {
         importManager.manageImport()
     }

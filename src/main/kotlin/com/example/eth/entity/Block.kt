@@ -12,6 +12,7 @@ class Block(
     var id: Long? = null,
 
     var number: Long,
+    var hash: String? = null,
     var transactionsCount: Int? = null,
     var timestamp: Int? = null,
 

@@ -26,6 +26,7 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
 
         return Block(
             number = blockNumber,
+            hash = ethBlock.hash,
             timestamp = hexToInt(ethBlock.timestamp),
             transactionsCount = transactions.count(),
             transactions = getTransactions(ethBlock.transactions, statuses)

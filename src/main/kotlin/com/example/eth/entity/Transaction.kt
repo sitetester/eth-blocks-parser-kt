@@ -15,6 +15,9 @@ class Transaction(
 
     var status: String? = null,
 
+    var fromTx: String? = null,
+    var toTx: String? = null,
+
     @ManyToOne
     @JoinColumn(name = "block_id")
     var block: Block? = null

@@ -86,7 +86,9 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
             Transaction(
                 hash = ethTransaction.hash,
                 blockNumber = hexToLong(ethTransaction.blockNumber),
-                status = status
+                status = status,
+                fromTx = ethTransaction.from,
+                toTx = ethTransaction.to
             )
         }
     }

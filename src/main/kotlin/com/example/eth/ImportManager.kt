@@ -17,7 +17,12 @@ class ImportManager(
     // https://dzone.com/articles/waiting-for-coroutines
     fun manageImport(startingBlockNumber: Int = 50000) {
 
-        val maxNum = startingBlockNumber + 10
+        val maxNum = if (startingBlockNumber > 50000) {
+            startingBlockNumber + 9
+        } else {
+            startingBlockNumber + 10
+        }
+
         val blockNumbers = (IntRange(startingBlockNumber, maxNum)).toList()
         println("Parsing blocks range: ${blockNumbers.first()} - ${blockNumbers.last()}")
 
@@ -34,7 +39,7 @@ class ImportManager(
             bulkInsert(resolvedBlocks)
         }
 
-        manageImport(maxNum)
+        manageImport(maxNum + 1)
     }
 
     // https://stackoverflow.com/questions/7349464/bulk-insert-or-update-with-hibernate

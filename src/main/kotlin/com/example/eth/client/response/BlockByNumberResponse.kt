@@ -4,12 +4,10 @@ data class BlockByNumberResponse(val jsonrpc: String, val id: Int, val result: E
 
 data class EthTransaction(
     val blockNumber: String,
-
-    /*val blockHash: String,
+    val blockHash: String,
     val transactionIndex: String,
-
     val from: String,
-    val to: String,*/
+    val to: String,
     val hash: String,
 )
 

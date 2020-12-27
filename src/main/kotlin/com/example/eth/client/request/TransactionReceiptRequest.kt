@@ -1,9 +1,9 @@
 package com.example.eth.client.request
 
 
-data class BlockByNumberRequest(
+data class TransactionReceiptRequest(
     val jsonrpc: String,
     val method: String,
-    val params: List<Any>,
+    val params: List<String>,
     val id: Int
 )

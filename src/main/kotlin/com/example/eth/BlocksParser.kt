@@ -19,18 +19,19 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
         val blockNumber = hexToLong(ethBlock.number)
         val transactions = ethBlock.transactions
 
-        var statuses: MutableMap<String, String> = mutableMapOf()
-        if (transactions.isNotEmpty()) {
-            statuses = getStatuses(transactions)
-        }
-
-        return Block(
+        val block = Block(
             number = blockNumber,
             hash = ethBlock.hash,
             timestamp = hexToInt(ethBlock.timestamp),
-            transactionsCount = transactions.count(),
-            transactions = getTransactions(ethBlock.transactions, statuses)
+            transactionsCount = transactions.count()
         )
+
+        if (transactions.isNotEmpty()) {
+            val statuses = getStatuses(transactions)
+            block.transactions = getTransactions(ethBlock.transactions, statuses)
+        }
+
+        return block
     }
 
     /**
@@ -78,8 +79,8 @@ class BlocksParser(private val ethHttpClient: EthHttpClient) {
     ): List<Transaction> {
 
         return ethTransactions.map { ethTransaction: EthTransaction ->
-            var status = "N/A"
-            if (statuses.count() > 0) {
+            var status = "Unknown"
+            if (statuses.count() > 0 && statuses[ethTransaction.hash] != null) {
                 status = statuses[ethTransaction.hash].toString()
             }
             Transaction(

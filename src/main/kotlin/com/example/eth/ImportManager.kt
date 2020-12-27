@@ -7,7 +7,6 @@ import kotlinx.coroutines.runBlocking
 import org.hibernate.SessionFactory
 import org.springframework.stereotype.Component
 
-// https://stackoverflow.com/questions/6827752/whats-the-difference-between-component-repository-service-annotations-in
 @Component
 class ImportManager(
     private val sessionFactory: SessionFactory,

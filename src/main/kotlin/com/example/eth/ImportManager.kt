@@ -7,7 +7,6 @@ import kotlinx.coroutines.runBlocking
 import org.hibernate.SessionFactory
 import org.springframework.stereotype.Component
 
-// https://stackoverflow.com/questions/35479631/how-to-use-spring-annotations-like-autowired-in-kotlin
 // https://stackoverflow.com/questions/6827752/whats-the-difference-between-component-repository-service-annotations-in
 @Component
 class ImportManager(
